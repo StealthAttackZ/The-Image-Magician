@@ -103,7 +103,7 @@ def sharpen_image(img_name):
 # apply smoothen filter to images and save
 def smoothen_image(img_name): 
     img = Image.open(img_name)
-    img = img.filter(ImageFilter.SMOOTH_MORE)
+    img = img.filter(ImageFilter.SMOOTH)
 
     img.thumbnail(size)
     img.save(f'processed_photos/smoothen/{img_name}')
@@ -310,7 +310,7 @@ class MIPanel(wx.Panel):
         self.sharpen_button.Bind(wx.EVT_BUTTON, self.sharpen)
         self.buttonsizer.Add(self.sharpen_button, 0, wx.LEFT|wx.TOP, 15)
         
-        self.smoothen_button = wx.Button(self, 0, "SMOOTHEN", size = (100,25))
+        self.smoothen_button = wx.Button(self, 0, "SMOOTH", size = (100,25))
         self.smoothen_button.Bind(wx.EVT_BUTTON, self.smoothen)
         self.buttonsizer.Add(self.smoothen_button, 0, wx.LEFT|wx.TOP, 15)
         
