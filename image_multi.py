@@ -102,8 +102,8 @@ def sharpen_image(img_name):
 
 # apply smoothen filter to images and save
 def smoothen_image(img_name): 
-    img = Image.open(img_name)
-    img = img.filter(ImageFilter.SMOOTH)
+    img = Image.open(f'scraped_photos/{img_name}')
+    img = img.filter(ImageFilter.SMOOTH_MORE)
 
     img.thumbnail(size)
     img.save(f'processed_photos/smoothen/{img_name}')
